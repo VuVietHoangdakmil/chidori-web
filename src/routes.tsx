@@ -16,7 +16,7 @@ export const path = {
 };
 export const browserRoute = createBrowserRouter([
   {
-    path: "/a",
+    path: "/a/",
     element: (
       <Layout>
         <Outlet />
@@ -43,7 +43,7 @@ export const browserRoute = createBrowserRouter([
     ],
   },
   {
-    path: "/b",
+    path: "/b/",
     element: (
       <Layoutb>
         <Outlet />
