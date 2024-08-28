@@ -47,8 +47,8 @@ const treeData = [
     disabled: true,
     children: [
       {
-        value: "Llittle-Rechar-ger",
-        title: "ittle Recharger . 1 giờ",
+        value: "Little-Rechar-ger",
+        title: "Little Recharger . 1 giờ",
       },
       {
         value: "take-a-break",
