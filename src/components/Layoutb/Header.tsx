@@ -66,6 +66,7 @@ const Header: React.FC = () => {
         </div>
         <div className="w-[20%] flex justify-end">
           <ButtonCustom
+            onClick={() => navigate(path.booking)}
             className="w-[140px] "
             type="primary"
             hoverPimaryColor={true}

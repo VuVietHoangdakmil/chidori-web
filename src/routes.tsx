@@ -1,22 +1,22 @@
-import { createBrowserRouter, Outlet, Navigate } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import Layout from "./components/Layout";
-import Layoutb from "./components/Layoutb";
+
 import Home from "./page/home";
 import SpaceDetail from "./page/detail_space";
 import Member from "./page/member/Member";
 import About from "./page/about";
 import Booking from "./page/booking";
 export const path = {
-  home: "/a/home",
+  home: "/home",
   menu: "menu",
-  about: "/b/about",
-  spaceDetail: "/a/space",
-  booking: "/a/booking",
-  membership: "/b/membership",
+  about: "/about",
+  spaceDetail: "/space",
+  booking: "/booking",
+  membership: "/membership",
 };
 export const browserRoute = createBrowserRouter([
   {
-    path: "/a/",
+    path: "/",
     element: (
       <Layout>
         <Outlet />
@@ -40,16 +40,6 @@ export const browserRoute = createBrowserRouter([
         path: path.spaceDetail + "/:id",
         element: <SpaceDetail />,
       },
-    ],
-  },
-  {
-    path: "/b/",
-    element: (
-      <Layoutb>
-        <Outlet />
-      </Layoutb>
-    ),
-    children: [
       {
         path: path.membership,
         element: <Member />,
@@ -60,8 +50,26 @@ export const browserRoute = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/",
-    element: <Navigate to={path.home} />,
-  },
+  // {
+  //   path: "/b/",
+  //   element: (
+  //     <Layoutb>
+  //       <Outlet />
+  //     </Layoutb>
+  //   ),
+  //   children: [
+  //     {
+  //       path: path.membership,
+  //       element: <Member />,
+  //     },
+  //     {
+  //       path: path.about,
+  //       element: <About />,
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "/",
+  //   element: <Navigate to={path.home} />,
+  // },
 ]);
