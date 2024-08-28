@@ -13,7 +13,7 @@ import {
   useGetDataSpace,
   useGetDataSpaceDetail,
 } from "../../hook/useGetData";
-import { useTranslationCustom } from "../../hook/useTranslation";
+
 const svgObj: any = {
   [Title.COFFEE_IN_BAD]: <SvgCoffeeInBed className="w-[110px] h-[110px]" />,
   [Title.COFFEE_SAPCE]: <SvgCoffeSpace className="w-[110px] h-[110px]" />,
@@ -29,14 +29,11 @@ const Detail = () => {
   const { t } = useGetDataLocation();
   const { DataSpaceDetail } = useGetDataSpaceDetail();
   const { DataSpace } = useGetDataSpace();
-  const { locations } = useGetDataLocation();
+
   const Title = Prams(id + "").unConver;
 
   const space = DataSpace.find((item) => item.title === Title);
   const spaceDetail = DataSpaceDetail.find((item) => item.key === Title);
-  const locationWith = locations.filter((item) =>
-    item?.spaces?.includes(Title)
-  );
 
   return (
     <div>

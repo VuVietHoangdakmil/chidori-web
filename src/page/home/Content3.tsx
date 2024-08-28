@@ -172,6 +172,7 @@ const Content3 = () => {
   const slides = useMemo(
     () =>
       steps.map((step, index) => {
+        console.log(step);
         const {
           img1,
           img2,

@@ -64,7 +64,11 @@ const App: React.FC = () => (
           name="Date"
           rules={[{ required: true, message: "Vui lòng chọn ngày sinh!" }]}
         >
-          <DatePicker format={["DD/MM/YY"]} className="h-[40px] w-full" />
+          <DatePicker
+            placeholder=""
+            format={["DD/MM/YY"]}
+            className="h-[40px] w-full"
+          />
         </Form.Item>
         <Form.Item<FieldType>
           label={<div className=" text-primary-color font-bold">Giới tính</div>}
