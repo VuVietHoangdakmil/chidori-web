@@ -1,0 +1,4 @@
+.svg-css-main.active {
+  border: 2px var(--color-hover-blue) solid;
+  background-color: var(--color-hover-bg-blue);
+}

@@ -2,7 +2,7 @@ import { Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useTranslationCustom } from "../../hook/useTranslation";
 import { useMemo } from "react";
-import SvgInBed from "../../svg/inBed";
+import { SvgInBed } from "../../svg";
 import ButtonCustom from "../../components/Button";
 import clsx from "clsx";
 type PropsMenu = {
@@ -20,7 +20,7 @@ const Menu: React.FC<PropsMenu> = ({ text1, text2, textLink, number }) => {
   const handeler = () => {
     navigate(textLink?.link ?? "");
   };
-  console.log("textLink", textLink);
+
   return (
     <div className="mt-[5.5rem] flex space-x-6 ">
       <div>
@@ -149,6 +149,7 @@ const Content1 = () => {
               <ButtonCustom
                 className="w-[150px] h-[50px] mt-[5rem] "
                 type="primary"
+                hoverPimaryColor={true}
               >
                 {t("t6")}
               </ButtonCustom>
@@ -157,7 +158,7 @@ const Content1 = () => {
           <Col span={16} className="grid justify-items-end">
             <div className="relative">
               <img
-                src="img/how-to-1.jpg"
+                src="/img/how-to-1.jpg"
                 style={{ borderRadius: "50%" }}
                 className="w-[633px] h-[633px] relative  z-40"
               />
@@ -174,7 +175,7 @@ const Content1 = () => {
                 style={{ borderRadius: "50%" }}
               ></div>
               <img
-                src="img/how-to-2.jpg"
+                src="/img/how-to-2.jpg"
                 style={{ borderRadius: "50%" }}
                 className="w-[422px] h-[422px] absolute z-40 left-1/2 transform -translate-x-1/2  top-[62%] "
               />

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import color from "./src/color"
 export default {
   content: [
     "./index.html",
@@ -19,10 +20,19 @@ export default {
         'primary-color-rgba': "#3e261399",
         'primary-color-hover': 'rgb(98 68 47)',
         "color-text-blue": "#1B3765",
-        'color-header': "#fff"
+        'color-header': "#fff",
+
+        'primary-color-2': color["primary-color-2"],
+        'primary-color-2-min-100': color["primary-color-2-min-100"],
+        'primary-color-2-min-200': "#e8f3fd",
+
+        "text-black-custome": "#262626",
+        "text-black--custome-min-100": "#404040"
       },
       width: {
-        'width-primary': "1150px"
+        'width-primary': "1200px",
+        'width-desktop': "1500px",
+        'width-footer': "1250px"
       },
     },
 

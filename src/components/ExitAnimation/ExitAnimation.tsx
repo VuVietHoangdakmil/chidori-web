@@ -1,24 +1,12 @@
-import React, { useCallback, useEffect, useRef } from "react";
-import {
-  EmblaCarouselType,
-  EmblaEventType,
-  EmblaOptionsType,
-} from "embla-carousel";
+import React, { useEffect } from "react";
+import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./DotButton";
 import { PrevButton, NextButton, usePrevNextButtons } from "./ArrowButton";
 import useEmblaCarousel from "embla-carousel-react";
 
 import "./index.css";
-type properties = {
-  src?: string;
-  content?: {
-    content1?: string;
-    content2?: string;
-    content3?: string;
-    content4?: string;
-  };
-};
-export type silde = { type: "img" | "content"; properties: properties };
+
+export type silde = React.ReactNode;
 
 type PropType = {
   slides: silde[];
@@ -27,11 +15,10 @@ type PropType = {
   hiddenDot?: boolean;
   slideSize: "100%" | "70%" | "100%/3";
   positionAbsolute?: boolean;
+  dataNumber: number;
+  setCurrent: React.Dispatch<React.SetStateAction<number>>;
 };
-const TWEEN_FACTOR_BASE = 0.84;
 
-const numberWithinRange = (number: number, min: number, max: number): number =>
-  Math.min(Math.max(number, min), max);
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const {
     positionAbsolute,
@@ -40,12 +27,14 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     hiddenArrow,
     hiddenDot,
     slideSize,
+    dataNumber,
+    setCurrent,
   } = props;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     slideSize === "100%/3" ? { ...options, align: "start" } : options
   );
-  const tweenFactor = useRef(0);
+
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
 
@@ -55,73 +44,22 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
-  const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
-  }, []);
-  const tweenOpacity = useCallback(
-    (emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
-      const engine = emblaApi.internalEngine();
-      const scrollProgress = emblaApi.scrollProgress();
-      const slidesInView = emblaApi.slidesInView();
-      const isScrollEvent = eventName === "scroll";
-
-      emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-        let diffToTarget = scrollSnap - scrollProgress;
-        const slidesInSnap = engine.slideRegistry[snapIndex];
-
-        slidesInSnap.forEach((slideIndex) => {
-          if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
-
-          if (engine.options.loop) {
-            engine.slideLooper.loopPoints.forEach((loopItem) => {
-              const target = loopItem.target();
-
-              if (slideIndex === loopItem.index && target !== 0) {
-                const sign = Math.sign(target);
-
-                if (sign === -1) {
-                  diffToTarget = scrollSnap - (1 + scrollProgress);
-                }
-                if (sign === 1) {
-                  diffToTarget = scrollSnap + (1 - scrollProgress);
-                }
-              }
-            });
-          }
-
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-          const opacity = numberWithinRange(tweenValue, 0, 1).toString();
-          emblaApi.slideNodes()[slideIndex].style.opacity = opacity;
-        });
-      });
-    },
-    []
-  );
 
   useEffect(() => {
-    if (slideSize !== "70%") {
-      return;
-    }
-    if (!emblaApi) return;
-
-    setTweenFactor(emblaApi);
-    tweenOpacity(emblaApi);
-    emblaApi
-      .on("reInit", setTweenFactor)
-      .on("reInit", tweenOpacity)
-      .on("scroll", tweenOpacity)
-      .on("slideFocus", tweenOpacity);
-  }, [emblaApi, tweenOpacity]);
-
+    onDotButtonClick(dataNumber);
+  }, [dataNumber]);
+  useEffect(() => {
+    setCurrent(selectedIndex);
+  }, [selectedIndex]);
   const element = (
     <div className="embla">
       <div style={{ display: "flex", alignItems: "center" }}>
         {hiddenArrow || (
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
         )}
-        <div className="embla__viewport" ref={emblaRef}>
+        <div className="embla__viewport w-full" ref={emblaRef}>
           <div className="embla__container">
-            {slides.map(({ type, properties }, index) => (
+            {slides.map((slide, index) => (
               <div
                 className={`embla_main ${
                   slideSize === "70%"
@@ -132,42 +70,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 }`}
                 key={index}
               >
-                {type === "img" ? (
-                  <img
-                    className="embla__slide__img"
-                    src={properties?.src}
-                    loading="lazy"
-                  />
-                ) : (
-                  <div>
-                    <img
-                      className="embla__slide__img"
-                      style={{ height: "500px", borderRadius: "10px" }}
-                      src={properties?.src}
-                    />
-                    <div>
-                      <div
-                        style={{
-                          backgroundColor: "#1abc9c",
-                          width: "150px",
-                          marginTop: "10px",
-                          padding: "2px 4px",
-                        }}
-                      >
-                        {properties?.content?.content1}
-                      </div>
-                      <h3 style={{ color: "#444" }}>
-                        {properties?.content?.content2}
-                      </h3>
-                      <div style={{ color: "#7A7A7A" }}>
-                        {properties?.content?.content3}
-                      </div>
-                      <h4 style={{ color: "#7A7A7A" }}>
-                        {properties?.content?.content4}
-                      </h4>
-                    </div>
-                  </div>
-                )}
+                {slide}
               </div>
             ))}
           </div>

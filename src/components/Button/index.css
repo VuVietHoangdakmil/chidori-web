@@ -1,6 +1,7 @@
 .custom-button {
   font-family: "Moderustic", sans-serif !important;
 }
-.custom-button:hover {
+
+.hover-bg-primary:hover {
   background-color: rgb(98 68 47) !important;
 }

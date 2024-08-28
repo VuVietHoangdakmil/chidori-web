@@ -1,0 +1,18 @@
+/*hover*/
+
+.custom-step-container .ant-steps-item-container:hover .custom-item {
+  border: 2px var(--color-hover-blue) solid !important;
+  background-color: var(--color-hover-bg-blue);
+}
+.custom-step-container .ant-steps-item-container:hover .hover-text {
+  color: var(--color-hover-blue-100) !important;
+}
+
+/*active*/
+.custom-step-container .ant-steps-item-process .hover-text {
+  color: var(--color-hover-blue-100) !important;
+}
+.custom-step-container .ant-steps-item-process .custom-item {
+  border: 2px var(--color-hover-blue) solid !important;
+  background-color: var(--color-hover-bg-blue);
+}

@@ -1,0 +1,16 @@
+export {
+  SvgInBed,
+  SvgCoffeSpace,
+  SvgMettingRoom,
+  SvgLevelSeat,
+  SvgCoffeeInBed,
+  SvgPrivateRoom,
+  SvgIconAir,
+  SvgIconDesk,
+  SvgIconPaper,
+  SvgIconPen,
+  SvgIconProjector,
+  SvgIconTissue,
+  SvgIconWifi,
+  SvgIconWorkDesk,
+} from "./svg";
