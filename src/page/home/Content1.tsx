@@ -3,7 +3,7 @@ import { SvgInBed } from "../../svg";
 const Content1 = () => {
   const { t } = useTranslationCustom();
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden w-full">
       <div className=" bg-hero-img h-[669px]  bg-no-repeat bg-cover bg-center w-[200%] -translate-x-1/4 rounded-t-[50%] overflow-hidden ">
         <div className=" bg-primary-color-rgba h-full text-center flex flex-col justify-between items-center">
           <div className="grid justify-items-center w-[600px] mx-auto pt-[130px]  ">

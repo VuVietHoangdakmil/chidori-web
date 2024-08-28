@@ -1,5 +1,5 @@
 import React from "react";
-
+import WrapForm from "./Wrapform";
 import type { FormProps } from "antd";
 import { DatePicker, Form, Input, Select } from "antd";
 
@@ -21,10 +21,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 
 const App: React.FC = () => (
   <>
-    <div className="w-[80%] mx-auto  border-[2px] border-primary-color rounded-lg">
-      <div className="text-white font-medium text-[2.5rem] bg-primary-color h-[70px] leading-[60px] pl-[20px] ">
-        Thông tin cá nhân
-      </div>
+    <WrapForm title="Thông tin cá nhân">
       <Form
         layout="vertical"
         name="basic"
@@ -88,7 +85,7 @@ const App: React.FC = () => (
           />
         </Form.Item>
       </Form>
-    </div>
+    </WrapForm>
     <div className=" w-[80%] mx-auto text-white rounded-[25px] font-medium text-[1.6rem] h-[50px] leading-[50px] text-center bg-[#3663ab] cursor-pointer hover:opacity-30 mt-20">
       Đăng ký
     </div>

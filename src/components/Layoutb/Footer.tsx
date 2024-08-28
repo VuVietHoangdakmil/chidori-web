@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
             {listFooter.slice(0, 4).map((item) => (
               <Link
                 key={item.key}
-                className="block text-primary-color-min-100 underline-offset-4 hover:underline hover:text-primary-color text-[1.8rem] py-5"
+                className="block  text-primary-color-min-100 underline-offset-4 hover:underline hover:text-primary-color text-[1.8rem] py-5"
                 to={item.path}
               >
                 {item.title}
@@ -102,8 +102,9 @@ const Footer: React.FC = () => {
             </div>
             {contactData.map((item, index) => (
               <a
-                className="w-[50%] text-primary-color-min-100 flex items-center py-2 px-4  mb-4 rounded-lg text-[1.8rem] border-[1px] border-zinc-200 hover:text-primary-color-min-100 hover:bg-slate-100"
+                className="w-[60%] text-primary-color-min-100 flex items-center py-2 px-4  mb-4 rounded-lg text-[1.8rem] border-[1px] border-zinc-200 hover:text-primary-color-min-100 hover:bg-slate-100"
                 key={index}
+                href="d"
               >
                 <div className="mr-2">{item.icon} </div> {item.name}
               </a>

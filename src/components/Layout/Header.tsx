@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 
   return (
     <div
-      style={{ zIndex: 9999 }}
+      style={{ zIndex: 999 }}
       className="bg-color-header h-[62px]   sticky top-0 left-0 right-0"
     >
       <div className=" w-width-primary h-full  mx-auto my-0 flex  items-center  ">
@@ -60,6 +60,7 @@ const Header: React.FC = () => {
             className="w-[140px] "
             type="primary"
             hoverPimaryColor={true}
+            onClick={() => navigate(path.booking)}
           >
             {t("t6")}
           </ButtonCustom>

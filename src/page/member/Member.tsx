@@ -139,7 +139,7 @@ const Member = () => {
             liên hệ:
           </li>
           <div className="text-[1.8rem] flex items-center my-6">
-            <CiMail fontSize="25px" />
+            <CiMail fontSize="25px" className="mr-5" />
             <a
               className="hover:text-primary-color  underline mr-4"
               href="https://app.chidori.vn/vi/chidori/customers/bookings/new"
@@ -148,7 +148,7 @@ const Member = () => {
             </a>
           </div>
           <div className="text-[1.8rem] flex items-center my-6">
-            <FaRegMessage fontSize="25px" />
+            <FaRegMessage fontSize="25px" className="mr-5" />
             <a
               className="hover:text-primary-color mr-4  underline"
               href="https://zalo.me/0986737301?ref=blog.chidori.vn"
@@ -157,7 +157,7 @@ const Member = () => {
             </a>
           </div>
           <div className="text-[1.8rem] flex items-center my-6">
-            <FaPhone fontSize="25px" />
+            <FaPhone fontSize="25px" className="mr-5" />
             <a className="hover:text-primary-color mr-4   underline" href="">
               038 3121238
             </a>

@@ -25,7 +25,7 @@ const Menu: React.FC<PropsMenu> = ({ text1, text2, textLink, number }) => {
     <div className="mt-[5.5rem] flex space-x-6 ">
       <div>
         <div
-          className="bg-primary-color-min-200 w-[4.8rem] rounded-b-full h-[4.8rem] relative 
+          className="bg-primary-color-min-200 w-[4.8rem]   rounded-b-full h-[4.8rem] relative 
     mt-[2.4rem]"
         >
           <span className="text-primary-color text-[4.8rem] absolute bottom-[1.4rem] left-1/2 transform -translate-x-1/2 ">

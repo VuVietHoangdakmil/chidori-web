@@ -5,11 +5,13 @@ import Home from "./page/home";
 import SpaceDetail from "./page/detail_space";
 import Member from "./page/member/Member";
 import About from "./page/about";
+import Booking from "./page/booking";
 export const path = {
   home: "/a/home",
   menu: "menu",
   about: "/b/about",
   spaceDetail: "/a/space",
+  booking: "/a/booking",
   membership: "/b/membership",
 };
 export const browserRoute = createBrowserRouter([
@@ -29,6 +31,10 @@ export const browserRoute = createBrowserRouter([
       {
         path: path.menu,
         element: <div></div>,
+      },
+      {
+        path: path.booking,
+        element: <Booking />,
       },
       {
         path: path.spaceDetail + "/:id",

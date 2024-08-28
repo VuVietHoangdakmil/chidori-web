@@ -21,6 +21,7 @@ export default {
         'primary-color-hover': 'rgb(98 68 47)',
         "color-text-blue": "#1B3765",
         'color-header': "#fff",
+        "color-text-primary-100": "#d92706",
 
         'primary-color-2': color["primary-color-2"],
         'primary-color-2-min-100': color["primary-color-2-min-100"],
