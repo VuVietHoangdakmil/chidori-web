@@ -19,13 +19,14 @@ const useGetDataLocation = () => {
   const { t } = useTranslationCustom();
   const locations: Location[] = [
     {
-      img: "/img/location/location1.jpg",
+      // img: "/img/location/location1.jpg",
+      img: "/img/grey/1b.jpg",
       text: t("t51"),
       title: t("t30"),
       spaces: [Title.COFFEE_SAPCE],
     },
     {
-      img: "/img/location/location2.jpg",
+      img: "/img/grey/2b.jpg",
       text: t("t53"),
       title: t("t52"),
       spaces: [Title.COFFEE_SAPCE],
@@ -38,10 +39,14 @@ const useGetDataSpace = () => {
   const DataSpace: PropsSlide[] = useMemo(
     () => [
       {
-        img1: "/img/step/1.jpg",
-        img2: "/img/step/2.jpg",
-        img3: "/img/step/3.jpg",
-        img4: "/img/step/4.jpg",
+        // img1: "/img/step/1.jpg",
+        // img2: "/img/step/2.jpg",
+        // img3: "/img/step/3.jpg",
+        // img4: "/img/step/4.jpg",
+        img1: "/img/grey/1b.jpg",
+        img2: "/img/grey/2b.jpg",
+        img3: "/img/grey/3b.jpg",
+        img4: "/img/grey/4b.jpg",
         text1: t("t28"),
         title: Title.COFFEE_SAPCE,
         text3: t("t29"),
@@ -54,10 +59,14 @@ const useGetDataSpace = () => {
         pathBooking: "",
       },
       {
-        img1: "/img/step/1-a.jpg",
-        img2: "/img/step/2-c.jpg",
-        img3: "/img/step/3-c1.jpg",
-        img4: "/img/step/4-c2.jpg",
+        // img1: "/img/step/1-a.jpg",
+        // img2: "/img/step/2-c.jpg",
+        // img3: "/img/step/3-c1.jpg",
+        // img4: "/img/step/4-c2.jpg",
+        img1: "/img/grey/1b.jpg",
+        img2: "/img/grey/3b.jpg",
+        img3: "/img/grey/2b.jpg",
+        img4: "/img/grey/5b.jpg",
         text1: t("t28"),
         title: Title.METTING_ROOM,
         text3: t("t33"),
@@ -70,10 +79,14 @@ const useGetDataSpace = () => {
         pathBooking: "1",
       },
       {
-        img1: "/img/step/1-b1.jpg",
-        img2: "/img/step/2-b2.jpg",
-        img3: "/img/step/3-b3.jpg",
-        img4: "/img/step/4-b4.jpg",
+        // img1: "/img/step/1-b1.jpg",
+        // img2: "/img/step/2-b2.jpg",
+        // img3: "/img/step/3-b3.jpg",
+        // img4: "/img/step/4-b4.jpg",
+        img1: "/img/grey/2b.jpg",
+        img2: "/img/grey/3b.jpg",
+        img3: "/img/grey/4b.jpg",
+        img4: "/img/grey/5b.jpg",
         text1: t("t28"),
         title: Title.LEVEL_SEAT,
         text3: t("t37"),
@@ -85,10 +98,14 @@ const useGetDataSpace = () => {
         pathBooking: "1",
       },
       {
-        img1: "/img/step/1-d1.jpg",
-        img2: "/img/step/2-d2.jpg",
-        img3: "/img/step/3-d3.jpg",
-        img4: "/img/step/4-d4.jpg",
+        // img1: "/img/step/1-d1.jpg",
+        // img2: "/img/step/2-d2.jpg",
+        // img3: "/img/step/3-d3.jpg",
+        // img4: "/img/step/4-d4.jpg",
+        img1: "/img/grey/2b.jpg",
+        img2: "/img/grey/3b.jpg",
+        img3: "/img/grey/5b.jpg",
+        img4: "/img/grey/1b.jpg",
         text1: t("t28"),
         title: Title.COFFEE_IN_BAD,
         text3: t("t41"),
@@ -102,10 +119,15 @@ const useGetDataSpace = () => {
         pathBooking: "1",
       },
       {
-        img1: "/img/step/5a.jpg",
-        img2: "/img/step/5b.jpg",
-        img3: "/img/step/5c.jpg",
-        img4: "/img/step/5d.jpg",
+        // img1: "/img/step/5a.jpg",
+        // img2: "/img/step/5b.jpg",
+        // img3: "/img/step/5c.jpg",
+        // img4: "/img/step/5d.jpg",
+
+        img1: "/img/grey/4b.jpg",
+        img2: "/img/grey/3b.jpg",
+        img3: "/img/grey/5b.jpg",
+        img4: "/img/grey/2b.jpg",
         text1: t("t28"),
         title: Title.PRIVATE_ROOM,
         text3: t("t45"),
@@ -129,7 +151,8 @@ const useGetDataSpaceDetail = () => {
   const DataSpaceDetail = useMemo(
     () => [
       {
-        img: "/img/step/1.jpg",
+        // img: "/img/step/1.jpg",
+        img: "/img/grey/3b.jpg",
         key: Title.COFFEE_SAPCE,
         contentInfo: t("t55"),
         svg: [
@@ -139,7 +162,8 @@ const useGetDataSpaceDetail = () => {
         ],
       },
       {
-        img: "/img/step/1-a.jpg",
+        // img: "/img/step/1-a.jpg",
+        img: "/img/grey/2b.jpg",
         contentInfo: t("t59"),
         key: Title.METTING_ROOM,
         svg: [
@@ -156,8 +180,8 @@ const useGetDataSpaceDetail = () => {
         ],
       },
       {
-        img: "/img/step/2-b2.jpg",
-
+        // img: "/img/step/2-b2.jpg",
+        img: "/img/grey/4b.jpg",
         contentInfo: t("t60"),
         key: Title.LEVEL_SEAT,
         svg: [

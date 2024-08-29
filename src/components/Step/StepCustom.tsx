@@ -61,7 +61,7 @@ const Step: React.FC<PropsStep> = ({ current, setCurrent, steps }) => {
       <ButtonCustom
         className="text-primary-color-2 font-medium "
         type="default"
-        style={{ border: "2px solid #93c5fd " }}
+        style={{ border: "2px solid var(--primary-color-2) " }}
         onClick={prev}
         disabled={current <= 0}
       >
@@ -77,7 +77,7 @@ const Step: React.FC<PropsStep> = ({ current, setCurrent, steps }) => {
       <ButtonCustom
         className="text-primary-color-2 font-medium "
         type="default"
-        style={{ border: "2px solid #93c5fd " }}
+        style={{ border: "2px solid var(--primary-color-2) " }}
         onClick={next}
         disabled={current >= steps.length - 1}
       >

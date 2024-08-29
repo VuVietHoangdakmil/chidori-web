@@ -64,17 +64,15 @@ const Detail = () => {
                 {spaceDetail?.contentInfo}
               </p>
 
-              <div className="bg-primary-color-2-min-200 min-h-[180px] p-7 mt-20">
+              <div className="bg-primary-color-2-min-300 min-h-[180px] p-7 mt-20">
                 <div className="text-primary-color-2 text-[1.8rem] font-medium ">
                   {t("t56")}
                 </div>
                 <Row gutter={[0, 25]} className=" mt-8">
                   {spaceDetail?.svg.map((item, index) => (
                     <Col key={index} span={12} className="flex items-center">
-                      <div className="text-primary-color-2-min-100">
-                        {item.svg}
-                      </div>
-                      <div className="text-primary-color-2 text-[1.6rem] ml-6">
+                      <div className="text-white">{item.svg}</div>
+                      <div className="text-white text-[1.6rem] ml-6">
                         {item.text}
                       </div>
                     </Col>

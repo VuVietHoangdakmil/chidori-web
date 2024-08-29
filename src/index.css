@@ -20,9 +20,14 @@
   padding: 0;
   margin: 0;
 
-  --color-hover-blue: #2c4f88;
-  --color-hover-blue-100: #87b5ee;
-  --color-hover-bg-blue: rgb(204 228 250);
+  --color-hover-blue: rgb(75 85 99);
+  --color-hover-blue-100: rgb(107 114 128);
+  --color-hover-bg-blue: rgb(156 163 175);
+
+  --primary-color-2: rgb(75 85 99);
+  --primary-color-2-min-100: rgb(107 114 128);
+  --primary-color-2-min-200: rgb(156 163 175);
+  --primary-color-2-min-300: rgb(209 213 219);
 }
 *,
 *::before,

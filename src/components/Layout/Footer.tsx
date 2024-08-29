@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                 <div className="w-10 bg-white h-[1px] mb-5"></div>
                 {contactData.map((item, index) => (
                   <a
-                    className="flex items-center py-2 px-4 bg-[#3967b7] mb-8 rounded-lg text-[1.8rem]"
+                    className="flex items-center py-2 px-4 bg-primary-color-min-100 mb-8 rounded-lg text-[1.8rem]"
                     key={index}
                   >
                     <div className="mr-2">{item.icon} </div> {item.name}

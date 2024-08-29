@@ -182,7 +182,7 @@ const App: React.FC = () => {
                 </div>
                 <div
                   onClick={showModal}
-                  className="bg-primary-color-2-min-100 font-medium hover:opacity-60 w-[150px] text-center text-primary-color-2 text-[1.6rem] py-2  rounded-[40px] mt-5 cursor-pointer"
+                  className="bg-primary-color-2-min-100 font-medium hover:opacity-60 w-[150px] text-center text-white text-[1.6rem] py-2  rounded-[40px] mt-5 cursor-pointer"
                 >
                   Đổi chi nhánh
                 </div>

@@ -44,7 +44,11 @@ const ListImg = () => {
               }
             )}
           >
-            <img className={" w-full h-full absolute top-0 "} src={item.src} />
+            <img
+              loading="lazy"
+              className={" w-full h-full absolute top-0 "}
+              src={item.src}
+            />
           </div>
         ))}
         <div className="absolute w-full bottom-0 h-1/5 bg-[linear-gradient(180deg,_rgba(255,255,255,0)_0%,_#FFF_100%)]"></div>

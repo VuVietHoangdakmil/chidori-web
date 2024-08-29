@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Step from "../../components/Step";
 import { useTranslationCustom } from "../../hook/useTranslation";
 import { ItemStep } from "../../components/Step/StepCustom";
+
 import {
   SvgCoffeeInBed,
   SvgCoffeSpace,
@@ -12,7 +13,7 @@ import {
 } from "../../svg";
 import { Title } from "../../types/enum";
 import ExitAnimation from "../../components/ExitAnimation";
-import { Col, ConfigProvider, Row } from "antd";
+import { Col, ConfigProvider, Row, Image } from "antd";
 import ButtonCustom from "../../components/Button/Button";
 import color from "../../color";
 import ThemeBlue from "../../components/Theme/ThemeBlue";
@@ -107,21 +108,38 @@ const Slide: React.FC<PropsSlide> = ({
     <Row gutter={44}>
       <Col span={16}>
         <div className="rounded-tl-[150px] rounded-br-[150px] overflow-hidden">
-          <Row
-            gutter={[8, 8]}
-            className="rounded-tl-[150px] rounded-br-[150px] overflow-hidden"
-          >
+          <Row gutter={[8, 8]}>
             <Col span={10}>
-              <img src={img1} className="h-[300px]" width="100%" />
+              <Image
+                src={img1}
+                preview={false}
+                style={{ width: "100%", height: "300px" }}
+                loading="lazy"
+              />
             </Col>
             <Col span={14}>
-              <img src={img2} className="h-[300px]" width="100%" />
+              <Image
+                src={img2}
+                preview={false}
+                style={{ width: "100%", height: "300px" }}
+                loading="lazy"
+              />
             </Col>
             <Col span={14}>
-              <img src={img3} className="h-[300px]" width="100%" />
+              <Image
+                src={img3}
+                preview={false}
+                style={{ width: "100%", height: "300px" }}
+                loading="lazy"
+              />
             </Col>
             <Col span={10}>
-              <img src={img4} className="h-[300px]" width="100%" />
+              <Image
+                src={img4}
+                preview={false}
+                style={{ width: "100%", height: "300px" }}
+                loading="lazy"
+              />
             </Col>
           </Row>
         </div>
@@ -148,7 +166,7 @@ const Slide: React.FC<PropsSlide> = ({
           onClick={() => {
             navigate(pathGotoDetail);
           }}
-          className=" w-full h-[5rem] mt-[1.5rem] mb-[0.8rem] text-primary-color-2 text-[1.6rem] font-medium"
+          className=" w-full h-[5rem] mt-[1.5rem] mb-[0.8rem]  text-[1.6rem] font-medium"
         >
           {t("t32")}
         </ButtonCustom>

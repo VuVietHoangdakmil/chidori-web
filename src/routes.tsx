@@ -1,13 +1,19 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import Layout from "./components/Layout";
+import { lazy, Suspense } from "react";
 
-import Home from "./page/home";
-import SpaceDetail from "./page/detail_space";
-import Member from "./page/member/Member";
-import About from "./page/about";
-import Booking from "./page/booking";
+// import Home from "./page/home";
+// import SpaceDetail from "./page/detail_space";
+// import Member from "./page/member/Member";
+// import About from "./page/about";
+// import Booking from "./page/booking";
+const Home = lazy(() => import("./page/home"));
+const SpaceDetail = lazy(() => import("./page/detail_space"));
+const Member = lazy(() => import("./page/member/Member"));
+const About = lazy(() => import("./page/about"));
+const Booking = lazy(() => import("./page/booking"));
 export const path = {
-  home: "/home",
+  home: "home",
   menu: "menu",
   about: "/about",
   spaceDetail: "/space",
@@ -25,7 +31,11 @@ export const browserRoute = createBrowserRouter([
     children: [
       {
         path: path.home,
-        element: <Home />,
+        element: (
+          <Suspense fallback={<></>}>
+            <Home />
+          </Suspense>
+        ),
       },
 
       {
@@ -34,19 +44,37 @@ export const browserRoute = createBrowserRouter([
       },
       {
         path: path.booking,
-        element: <Booking />,
+
+        element: (
+          <Suspense fallback={<></>}>
+            <Booking />
+          </Suspense>
+        ),
       },
       {
         path: path.spaceDetail + "/:id",
-        element: <SpaceDetail />,
+        element: (
+          <Suspense fallback={<></>}>
+            <SpaceDetail />{" "}
+          </Suspense>
+        ),
       },
       {
         path: path.membership,
-        element: <Member />,
+        element: (
+          <Suspense fallback={<></>}>
+            {" "}
+            <Member />
+          </Suspense>
+        ),
       },
       {
         path: path.about,
-        element: <About />,
+        element: (
+          <Suspense fallback={<></>}>
+            <About />{" "}
+          </Suspense>
+        ),
       },
     ],
   },

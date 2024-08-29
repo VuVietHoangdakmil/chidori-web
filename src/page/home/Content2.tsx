@@ -158,9 +158,11 @@ const Content1 = () => {
           <Col span={16} className="grid justify-items-end">
             <div className="relative">
               <img
-                src="/img/how-to-1.jpg"
+                // src="/img/how-to-1.jpg"
+                src="/img/grey/2b.jpg"
                 style={{ borderRadius: "50%" }}
                 className="w-[633px] h-[633px] relative  z-40"
+                loading="lazy"
               />
               <div
                 className="w-[506px] z-30 h-[506px] bg-primary-color-min-200 absolute left-1/2 transform -translate-x-1/2 top-[40%]"
@@ -175,7 +177,9 @@ const Content1 = () => {
                 style={{ borderRadius: "50%" }}
               ></div>
               <img
-                src="/img/how-to-2.jpg"
+                // src="/img/how-to-2.jpg"
+                src="/img/grey/4b.jpg"
+                loading="lazy"
                 style={{ borderRadius: "50%" }}
                 className="w-[422px] h-[422px] absolute z-40 left-1/2 transform -translate-x-1/2  top-[62%] "
               />
