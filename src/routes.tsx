@@ -13,7 +13,7 @@ const Member = lazy(() => import("./page/member/Member"));
 const About = lazy(() => import("./page/about"));
 const Booking = lazy(() => import("./page/booking"));
 export const path = {
-  home: "home",
+  home: "/home",
   menu: "menu",
   about: "/about",
   spaceDetail: "/space",
