@@ -1,12 +1,6 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import Layout from "./components/Layout";
 import { lazy, Suspense } from "react";
-
-// import Home from "./page/home";
-// import SpaceDetail from "./page/detail_space";
-// import Member from "./page/member/Member";
-// import About from "./page/about";
-// import Booking from "./page/booking";
 const Home = lazy(() => import("./page/home"));
 const SpaceDetail = lazy(() => import("./page/detail_space"));
 const Member = lazy(() => import("./page/member/Member"));
@@ -37,14 +31,8 @@ export const browserRoute = createBrowserRouter([
           </Suspense>
         ),
       },
-
-      {
-        path: path.menu,
-        element: <div></div>,
-      },
       {
         path: path.booking,
-
         element: (
           <Suspense fallback={<></>}>
             <Booking />
@@ -63,7 +51,7 @@ export const browserRoute = createBrowserRouter([
         path: path.membership,
         element: (
           <Suspense fallback={<></>}>
-            {" "}
+          
             <Member />
           </Suspense>
         ),
@@ -78,26 +66,5 @@ export const browserRoute = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/b/",
-  //   element: (
-  //     <Layoutb>
-  //       <Outlet />
-  //     </Layoutb>
-  //   ),
-  //   children: [
-  //     {
-  //       path: path.membership,
-  //       element: <Member />,
-  //     },
-  //     {
-  //       path: path.about,
-  //       element: <About />,
-  //     },
-  //   ],
-  // },
-  // {
-  //   path: "/",
-  //   element: <Navigate to={path.home} />,
-  // },
+  
 ]);

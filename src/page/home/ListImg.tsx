@@ -24,7 +24,7 @@ const ListImg = () => {
   const { t } = useTranslationCustom();
 
   return (
-    <div className="w-width-primary mx-auto text-center p-40">
+    <div className="sm:w-width-primary w-[95%] mx-auto text-center py-40 sm:px-40">
       <p className="text-color-text-primary font-medium text-[3rem]">
         {t("t64")}
       </p>
@@ -53,9 +53,9 @@ const ListImg = () => {
         ))}
         <div className="absolute w-full bottom-0 h-1/5 bg-[linear-gradient(180deg,_rgba(255,255,255,0)_0%,_#FFF_100%)]"></div>
       </div>
-      <div className="bg-primary-color-min-300 h-[400px] rounded-[40px] mt-44">
-        <Row className="text-left p-20" gutter={10}>
-          <Col span={14}>
+      <div className="bg-primary-color-min-300  rounded-[40px] mt-44">
+        <Row className="text-left p-20" gutter={[10, 10]}>
+          <Col span={24} sm={14}>
             <p className="text-color-text-primary font-medium text-[2.5rem]">
               {t("t67")}
             </p>
@@ -70,8 +70,8 @@ const ListImg = () => {
               {t("t69")}
             </ButtonCustom>
           </Col>
-          <Col span={10}>
-            <img src="/img/step/2-icon1.png" />
+          <Col span={24} sm={10}>
+            <img src="/img/step/2-icon1.png" loading="lazy" />
           </Col>
         </Row>
       </div>

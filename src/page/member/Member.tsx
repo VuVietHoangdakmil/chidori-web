@@ -18,8 +18,8 @@ const list = [
 ];
 const Member = () => {
   return (
-    <div className="w-width-primary mx-auto">
-      <div className="w-[70%] mx-auto text-text-black-custome">
+    <div className="sm:w-width-primary w-[95%] mx-auto">
+      <div className="sm:w-[70%] w-full mx-auto text-text-black-custome">
         <p className="text-[1.6rem]">3 Th01 2023</p>
         <h1 className="text-[3.8rem] font-medium">
           Bạn đã đăng ký thành viên của Chidori chưa?

@@ -50,9 +50,9 @@ const Footer: React.FC = () => {
   ];
   return (
     <div className=" bg-primary-color-2">
-      <div className="w-width-footer mx-auto">
+      <div className="sm:w-width-footer w-[95%] mx-auto">
         <Row gutter={[50, 0]} className="pb-28">
-          <Col span={6} className="h-[50px] mt-14">
+          <Col span={24} sm={6} className="h-[50px] mt-14">
             <Image
               src="https://chidori.vn/assets/logo-white-9d84a8f7ae91bbbe77f7f8b075bf1cac6f96f640ae6749d0464a42e1ad42b9d8.svg"
               preview={false}
@@ -62,9 +62,9 @@ const Footer: React.FC = () => {
               The authentic coffee in bed® from Japan
             </div>
           </Col>
-          <Col span={18}>
-            <Row className="pt-32" gutter={18}>
-              <Col span={9}>
+          <Col span={24} sm={18}>
+            <Row className="pt-32" gutter={[18, 18]}>
+              <Col span={12} sm={9}>
                 <div className="w-10 bg-white h-[1px]"></div>
                 {listFooter.slice(0, 4).map((item) => (
                   <Link
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
                   </Link>
                 ))}
               </Col>
-              <Col span={9}>
+              <Col span={12} sm={9}>
                 <div className="w-10 bg-white h-[1px]"></div>
                 {listFooter.slice(4).map((item) => (
                   <Link
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
                   </Link>
                 ))}
               </Col>
-              <Col span={6}>
+              <Col span={24} sm={6}>
                 <div className="w-10 bg-white h-[1px] mb-5"></div>
                 {contactData.map((item, index) => (
                   <a

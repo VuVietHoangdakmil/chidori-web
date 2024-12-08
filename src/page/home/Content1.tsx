@@ -4,10 +4,10 @@ const Content1 = () => {
   const { t } = useTranslationCustom();
   return (
     <div className="overflow-hidden w-full">
-      <div className=" bg-hero-img h-[669px]  bg-no-repeat bg-cover bg-center w-[200%] -translate-x-1/4 rounded-t-[50%] overflow-hidden ">
+      <div className=" bg-hero-img sm:h-[669px] h-[800px]  bg-no-repeat bg-cover bg-center w-[200%] -translate-x-1/4 rounded-t-[50%] overflow-hidden ">
         <div className=" bg-primary-color-rgba h-full text-center flex flex-col justify-between items-center">
-          <div className="grid justify-items-center w-[600px] mx-auto pt-[130px]  ">
-            <h1 className="bg-primary-color-min-100 w-[438px] text-[3.5rem] font-semibold shadow-lg ">
+          <div className="grid justify-items-center sm:w-[600px] w-[46%]  mx-auto pt-[130px]  ">
+            <h1 className="bg-primary-color-min-100  sm:w-[438px] w-[99%] text-[3.5rem] font-semibold shadow-lg ">
               {t("t7")}
             </h1>
             <span className="text-[2.5rem] mt-[1rem]">{t("t8")}</span>

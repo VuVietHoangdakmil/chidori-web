@@ -12,13 +12,13 @@ type PropsLayout = {
 const Layout: React.FC<PropsLayout> = ({ children }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const condition =
+  const conditionB =
     pathname.startsWith(path.membership) || pathname.startsWith(path.about);
   useEffect(() => {
     if (pathname === "/") navigate(path.home);
   }, []);
-  const HeaderH = condition ? <HeaderB /> : <Header />;
-  const FooterH = condition ? <FooterB /> : <Footer />;
+  const HeaderH =conditionB ? <HeaderB /> : <Header />;
+  const FooterH =conditionB ? <FooterB /> : <Footer />;
   return (
     <>
       <PopupAdvertisement />

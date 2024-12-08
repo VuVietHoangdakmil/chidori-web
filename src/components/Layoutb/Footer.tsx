@@ -1,8 +1,10 @@
-import { Col, Row, Image } from "antd";
+import { Col, Row, Image, Grid } from "antd";
 import { Link } from "react-router-dom";
 import { useTranslationCustom } from "../../hook/useTranslation";
 import contactData from "../../data/contactData";
 import ButtonCustom from "../Button";
+import { cn } from "../../util/helper/class.helper";
+const { useBreakpoint } = Grid;
 const Footer: React.FC = () => {
   const { t } = useTranslationCustom();
   const listFooter = [
@@ -49,10 +51,10 @@ const Footer: React.FC = () => {
       key: 7,
     },
   ];
-
+  const { sm } = useBreakpoint();
   return (
     <div className="">
-      <div className="w-width-primary mx-auto ">
+      <div className="sm:w-width-primary w-[95%] mx-auto ">
         <div className="rounded-[20px] h-[300px] overflow-hidden bg-cover bg-no-repeat bg-center bg-[url('/img/imgFooter.jpg')] ">
           <div
             className=" h-full flex justify-center  flex-col pl-32"
@@ -72,15 +74,15 @@ const Footer: React.FC = () => {
             </ButtonCustom>
           </div>
         </div>
-        <Row gutter={[50, 0]} className="pb-28 mt-20">
-          <Col span={8} className="h-[50px] mt-14">
+        <Row gutter={[50, 25]} className="pb-28 mt-20 ">
+          <Col span={24} sm={8} className="h-[50px] mt-14">
             <Image src="/img/logo.png" preview={false} width="250px" />
-            <div className="text-primary-color-min-100 text-[1.6rem] mt-24">
+            <div className="text-primary-color-min-100 text-[1.6rem]  mt-24">
               The authentic coffee in bed® from Japan
             </div>
           </Col>
 
-          <Col span={8}>
+          <Col span={24} sm={8} className={cn({ "mt-28": !sm })}>
             <div className="text-[2.4rem] text-color-text-primary ">
               Chidori
             </div>
@@ -96,7 +98,7 @@ const Footer: React.FC = () => {
             ))}
           </Col>
 
-          <Col span={8}>
+          <Col span={24} sm={8}>
             <div className="text-[2.4rem] text-color-text-primary ">
               Liên hệ
             </div>

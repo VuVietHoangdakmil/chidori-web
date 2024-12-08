@@ -1,9 +1,10 @@
-import { Col, Row } from "antd";
+import { Col, Row, Grid } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useTranslationCustom } from "../../hook/useTranslation";
 import { useMemo } from "react";
 import { SvgInBed } from "../../svg";
 import ButtonCustom from "../../components/Button";
+const { useBreakpoint } = Grid;
 import clsx from "clsx";
 type PropsMenu = {
   text1: string;
@@ -65,7 +66,7 @@ const Menu: React.FC<PropsMenu> = ({ text1, text2, textLink, number }) => {
 
 const Content1 = () => {
   const { t } = useTranslationCustom();
-
+  const { sm } = useBreakpoint();
   const listMenu: PropsMenu[] = [
     {
       text1: t("t15"),
@@ -115,8 +116,8 @@ const Content1 = () => {
 
   return (
     <div className="bg-primary-color-min-300  w-full ">
-      <div className="w-width-primary mx-auto py-32">
-        <div className="w-[80%] mx-auto mb-[5rem]">
+      <div className="sm:w-width-primary w-[99%] mx-auto py-32">
+        <div className="sm:w-[80%] w-[95%] mx-auto mb-[5rem]">
           <div className="text-color-text-primary text-center font-semibold text-[2.4rem]">
             {customt12}
           </div>
@@ -124,8 +125,12 @@ const Content1 = () => {
             {t("t13")}
           </div>
         </div>
-        <Row gutter={10} className="pb-[5rem]">
-          <Col span={8}>
+        <Row
+          gutter={10}
+          className="pb-[5rem] sm:w-full w-[90%] "
+          style={{ margin: "0 auto" }}
+        >
+          <Col span={sm ? 8 : 24}>
             <span className="text-[2rem] text-color-text-primary font-semibold">
               {t("t14")}
             </span>
@@ -155,36 +160,38 @@ const Content1 = () => {
               </ButtonCustom>
             </div>
           </Col>
-          <Col span={16} className="grid justify-items-end">
-            <div className="relative">
-              <img
-                // src="/img/how-to-1.jpg"
-                src="/img/grey/2b.jpg"
-                style={{ borderRadius: "50%" }}
-                className="w-[633px] h-[633px] relative  z-40"
-                loading="lazy"
-              />
-              <div
-                className="w-[506px] z-30 h-[506px] bg-primary-color-min-200 absolute left-1/2 transform -translate-x-1/2 top-[40%]"
-                style={{ borderRadius: "50%" }}
-              ></div>
-              <div
-                className="w-[460px] h-[460px] border border-white  absolute z-50 left-1/2 transform -translate-x-1/2 top-[42%]"
-                style={{ borderRadius: "50%" }}
-              ></div>
-              <div
-                className="w-[380px] h-[380px] z-10 border border-primary-color-min-100 absolute z-50 left-[14%] top-[69%]"
-                style={{ borderRadius: "50%" }}
-              ></div>
-              <img
-                // src="/img/how-to-2.jpg"
-                src="/img/grey/4b.jpg"
-                loading="lazy"
-                style={{ borderRadius: "50%" }}
-                className="w-[422px] h-[422px] absolute z-40 left-1/2 transform -translate-x-1/2  top-[62%] "
-              />
-            </div>
-          </Col>
+          {sm && (
+            <Col span={16} className="grid justify-items-end">
+              <div className="relative">
+                <img
+                  // src="/img/how-to-1.jpg"
+                  src="/img/grey/2b.jpg"
+                  style={{ borderRadius: "50%" }}
+                  className="w-[633px] h-[633px] relative  z-40"
+                  loading="lazy"
+                />
+                <div
+                  className="w-[506px] z-30 h-[506px] bg-primary-color-min-200 absolute left-1/2 transform -translate-x-1/2 top-[40%]"
+                  style={{ borderRadius: "50%" }}
+                ></div>
+                <div
+                  className="w-[460px] h-[460px] border border-white  absolute z-50 left-1/2 transform -translate-x-1/2 top-[42%]"
+                  style={{ borderRadius: "50%" }}
+                ></div>
+                <div
+                  className="w-[380px] h-[380px] z-10 border border-primary-color-min-100 absolute z-50 left-[14%] top-[69%]"
+                  style={{ borderRadius: "50%" }}
+                ></div>
+                <img
+                  // src="/img/how-to-2.jpg"
+                  src="/img/grey/4b.jpg"
+                  loading="lazy"
+                  style={{ borderRadius: "50%" }}
+                  className="w-[422px] h-[422px] absolute z-40 left-1/2 transform -translate-x-1/2  top-[62%] "
+                />
+              </div>
+            </Col>
+          )}
         </Row>
       </div>
     </div>

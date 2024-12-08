@@ -2,7 +2,7 @@ import FormBooking from "../../components/Form/FormBooking";
 
 const Booking = () => {
   return (
-    <div className="w-[700px] mx-auto">
+    <div className="sm:w-[700px] w-[98%] mx-auto">
       <FormBooking />
     </div>
   );

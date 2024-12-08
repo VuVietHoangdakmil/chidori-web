@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div className="w-width-primary mx-auto">
-      <div className="w-[70%] mx-auto text-text-black-custome">
+    <div className="sm:w-width-primary w-[98%] mx-auto">
+      <div className="sm:w-[70%] w-full mx-auto text-text-black-custome">
         <p className="text-[1.6rem] text-center">2 Th01 2023 </p>
         <h1 className="text-[6rem] font-medium text-center">About us</h1>
         <img className="rounded-lg mt-16" src="/img/about/M2201992-min-1.jpg" />
